@@ -25,7 +25,7 @@ class IcuData
      */
     public static function getVersion()
     {
-        return trim(file_get_contents(__DIR__ . '/Resources/data/version.txt'));
+        return trim(file_get_contents(__DIR__.'/Resources/data/version.txt'));
     }
 
     /**
@@ -46,7 +46,7 @@ class IcuData
      */
     public static function getResourceDirectory()
     {
-        return realpath(__DIR__ . '/Resources/data');
+        return realpath(__DIR__.'/Resources/data');
     }
 
     /**

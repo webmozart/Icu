@@ -34,7 +34,7 @@ class IcuLanguageBundle extends LanguageBundle
      */
     public function getLocales()
     {
-        return $this->readEntry('misc', array('Locales'));
+        return $this->readEntry('meta', array('AvailableLocales'));
     }
 
     /**
