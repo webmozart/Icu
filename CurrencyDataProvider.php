@@ -147,10 +147,14 @@ class CurrencyDataProvider
      */
     public function getNumericCode($currency)
     {
-        try {
-            return $this->reader->readEntry($this->path, 'root', array('Alpha3ToNumeric', $currency));
-        } catch (MissingResourceException $e) {
-            return 0;
-        }
+        return $this->reader->readEntry($this->path, 'root', array('Alpha3ToNumeric', $currency));
+    }
+
+    /**
+     * Data provider for {@link \Symfony\Component\Intl\Currency::forNumericCode()}.
+     */
+    public function forNumericCode($numericCode)
+    {
+        return $this->reader->readEntry($this->path, 'root', array('NumericToAlpha3', (string) $numericCode));
     }
 }
